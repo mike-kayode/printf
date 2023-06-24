@@ -1,6 +1,12 @@
 #include <stdio.h>
 #include <stdarg.h>
 
+/**
+ * _printf - function that produce output
+ * @format : character
+ * Return: Return count
+ */
+
 int _printf(const char *format, ...)
 {
 	va_list args;
