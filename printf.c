@@ -12,7 +12,7 @@ int _printf(const char *format, ...)
 	va_list args;
 	int count = 0;
 	int ch;
-	const char *str;
+	char *str;
 	int num;
 
 	va_start(args, format);
@@ -31,7 +31,7 @@ int _printf(const char *format, ...)
 					count++;
 					break;
 				case 's':
-					str = va_arg(args, const char *);
+					str = va_arg(args, char *);
 					while (*str != '\0')
 					{
 						putchar(*str);
