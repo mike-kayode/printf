@@ -14,6 +14,10 @@ int _printf(const char *format, ...)
 	int ch;
 	char *str;
 	int num;
+	unsigned int u;
+	unsigned int o;
+	unsigned int x;
+	unsigned int X;
 
 	va_start(args, format);
 
@@ -43,6 +47,23 @@ int _printf(const char *format, ...)
 					putchar('%');
 					count++;
 					break;
+				case 'u':
+					u = va_arg(args, unsigned int);
+					count += printf("%u", u);
+					break;
+				case 'o':
+					o = va_arg(args, unsigned int);
+					count += printf("%o", o);
+					break;
+				case'x':
+					x = va_arg(args, unsigned int);
+					count += printf("%x", x);
+					break;
+				case 'X':
+					X = va_arg(args, unsigned int);
+					count += printf("%X", X);
+					break;
+
 				case 'd':
 				case 'i':
 					num = va_arg(args, int);
